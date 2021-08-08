@@ -1,4 +1,4 @@
-package com.example.sharedprefrence.classes;
+package com.example.sharedprefrence.Classes;
 
 import java.io.Serializable;
 import java.util.List;

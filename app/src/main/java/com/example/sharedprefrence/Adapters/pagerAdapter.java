@@ -1,4 +1,4 @@
-package com.example.sharedprefrence;
+package com.example.sharedprefrence.Adapters;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;

@@ -1,6 +1,8 @@
-package com.example.sharedprefrence;
+package com.example.sharedprefrence.MVVM;
 
-import com.example.sharedprefrence.classes.categories;
+import com.example.sharedprefrence.Classes.categories;
+import com.example.sharedprefrence.Classes.catogeryMeals;
+import com.example.sharedprefrence.Classes.mealDetail;
 
 import retrofit2.Call;
 import retrofit2.http.GET;

@@ -1,4 +1,4 @@
-package com.example.sharedprefrence;
+package com.example.sharedprefrence.Adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -11,6 +11,9 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.sharedprefrence.Classes.catogeryMeals;
+import com.example.sharedprefrence.Classes.mealDetail;
+import com.example.sharedprefrence.R;
 
 import java.util.HashMap;
 import java.util.List;
@@ -83,7 +86,7 @@ public class mealAdapter extends RecyclerView.Adapter<mealAdapter.mealViewHolder
         }
     }
 
-    interface onMealClickListener{
+    public interface onMealClickListener{
         void onMealClick(String id);
     }
 

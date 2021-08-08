@@ -1,4 +1,4 @@
-package com.example.sharedprefrence;
+package com.example.sharedprefrence.UI;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -22,7 +22,11 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.bumptech.glide.Glide;
-import com.example.sharedprefrence.classes.categories;
+import com.example.sharedprefrence.Classes.categories;
+import com.example.sharedprefrence.Classes.catogeryMeals;
+import com.example.sharedprefrence.Classes.mealDetail;
+import com.example.sharedprefrence.R;
+import com.example.sharedprefrence.MVVM.myViewModel;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -33,7 +37,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.io.Serializable;
 import java.util.List;
 
-public class MealDetails extends AppCompatActivity {
+public class MealDetailsActivity extends AppCompatActivity {
 
     CollapsingToolbarLayout collapse;
     ImageView mealImg,fav;
@@ -106,7 +110,7 @@ public class MealDetails extends AppCompatActivity {
                 myMeal.setIdMeal(mealDetail.getMeals().get(0).getIdMeal());
                 myMeal.setStrMeal(mealDetail.getMeals().get(0).getStrMeal());
                 myMeal.setStrMealThumb(mealDetail.getMeals().get(0).getStrMealThumb());
-                Glide.with(MealDetails.this).load(mealDetail.getMeals().get(0).getStrMealThumb()).into(mealImg);
+                Glide.with(MealDetailsActivity.this).load(mealDetail.getMeals().get(0).getStrMealThumb()).into(mealImg);
                 collapse.setTitle(mealDetail.getMeals().get(0).getStrMeal());
                 categ.setText(mealDetail.getMeals().get(0).getStrCategory());
                 count.setText(mealDetail.getMeals().get(0).getStrArea());
@@ -121,7 +125,7 @@ public class MealDetails extends AppCompatActivity {
                             startActivity(intent);
                             finish();
                         }else{
-                            Toast.makeText(MealDetails.this, "Error!!!", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(MealDetailsActivity.this, "Error!!!", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
@@ -133,7 +137,7 @@ public class MealDetails extends AppCompatActivity {
                             startActivity(intent);
                             finish();
                         }else{
-                            Toast.makeText(MealDetails.this, "Error!!!", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(MealDetailsActivity.this, "Error!!!", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
@@ -271,17 +275,17 @@ public class MealDetails extends AppCompatActivity {
         int id = view.getId();
         if(id == R.id.back_btn){
             if(search){
-                Intent intent = new Intent(MealDetails.this, CategoriesActivity.class);
+                Intent intent = new Intent(MealDetailsActivity.this, CategoriesActivity.class);
                 startActivity(intent);
                 finish();
             }
             else if(favv){
-                Intent intent = new Intent(MealDetails.this, FavoriteActivity.class);
+                Intent intent = new Intent(MealDetailsActivity.this, FavoriteActivity.class);
                 startActivity(intent);
                 finish();
             }
             else{
-                Intent intent = new Intent(MealDetails.this, CategoryMeals.class);
+                Intent intent = new Intent(MealDetailsActivity.this, CategoryMealsActivity.class);
                 Bundle bundle = new Bundle();
                 bundle.putSerializable("category",(Serializable)categs);
                 intent.putExtra("category",bundle);
@@ -311,17 +315,17 @@ public class MealDetails extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         if(search){
-            Intent intent = new Intent(MealDetails.this, CategoriesActivity.class);
+            Intent intent = new Intent(MealDetailsActivity.this, CategoriesActivity.class);
             startActivity(intent);
             finish();
         }
         else if(favv){
-            Intent intent = new Intent(MealDetails.this, FavoriteActivity.class);
+            Intent intent = new Intent(MealDetailsActivity.this, FavoriteActivity.class);
             startActivity(intent);
             finish();
         }
        else{
-            Intent intent = new Intent(MealDetails.this, CategoryMeals.class);
+            Intent intent = new Intent(MealDetailsActivity.this, CategoryMealsActivity.class);
             Bundle bundle = new Bundle();
             bundle.putSerializable("category",(Serializable)categs);
             intent.putExtra("category",bundle);

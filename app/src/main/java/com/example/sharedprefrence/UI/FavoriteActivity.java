@@ -1,4 +1,4 @@
-package com.example.sharedprefrence;
+package com.example.sharedprefrence.UI;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,6 +11,9 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.View;
 
+import com.example.sharedprefrence.Adapters.mealAdapter;
+import com.example.sharedprefrence.Classes.catogeryMeals;
+import com.example.sharedprefrence.R;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -71,7 +74,7 @@ public class FavoriteActivity extends AppCompatActivity implements mealAdapter.o
 
     @Override
     public void onMealClick(String id) {
-        Intent intent = new Intent(FavoriteActivity.this,MealDetails.class);
+        Intent intent = new Intent(FavoriteActivity.this, MealDetailsActivity.class);
         intent.putExtra("mealId",id);
         intent.putExtra("fav",true);
         startActivity(intent);

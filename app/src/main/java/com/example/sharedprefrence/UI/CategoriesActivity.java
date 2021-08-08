@@ -1,4 +1,4 @@
-package com.example.sharedprefrence;
+package com.example.sharedprefrence.UI;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
@@ -17,12 +17,18 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.sharedprefrence.classes.categories;
+import com.example.sharedprefrence.Adapters.mealAdapter;
+import com.example.sharedprefrence.Adapters.recAdapter;
+import com.example.sharedprefrence.Classes.categories;
+import com.example.sharedprefrence.Classes.mealDetail;
+import com.example.sharedprefrence.R;
+import com.example.sharedprefrence.MVVM.myViewModel;
+import com.example.sharedprefrence.Adapters.recAdapter.onItemClickListener;
 
 import java.io.Serializable;
 import java.util.List;
 
-public class CategoriesActivity extends AppCompatActivity implements recAdapter.onItemClickListener,mealAdapter.onMealClickListener{
+public class CategoriesActivity extends AppCompatActivity implements onItemClickListener, mealAdapter.onMealClickListener{
 
     myViewModel vm,svm;
     RecyclerView rec,recSearch;
@@ -130,7 +136,7 @@ public class CategoriesActivity extends AppCompatActivity implements recAdapter.
     public void onItemClick(List<categories.CategoriesBean>categs,int index) {
         Bundle bundle=new Bundle();
         bundle.putSerializable("category", (Serializable) categs);
-        Intent intent=new Intent(CategoriesActivity.this, CategoryMeals.class);
+        Intent intent=new Intent(CategoriesActivity.this, CategoryMealsActivity.class);
         intent.putExtra("category",bundle);
         intent.putExtra("index",index);
         startActivity(intent);
@@ -139,7 +145,7 @@ public class CategoriesActivity extends AppCompatActivity implements recAdapter.
 
     @Override
     public void onMealClick(String id) {
-        Intent intent = new Intent(CategoriesActivity.this,MealDetails.class);
+        Intent intent = new Intent(CategoriesActivity.this, MealDetailsActivity.class);
         intent.putExtra("mealId",id);
         intent.putExtra("search",true);
         startActivity(intent);

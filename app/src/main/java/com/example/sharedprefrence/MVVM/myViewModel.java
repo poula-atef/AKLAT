@@ -1,9 +1,11 @@
-package com.example.sharedprefrence;
+package com.example.sharedprefrence.MVVM;
 
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-import com.example.sharedprefrence.classes.categories;
+import com.example.sharedprefrence.Classes.categories;
+import com.example.sharedprefrence.Classes.catogeryMeals;
+import com.example.sharedprefrence.Classes.mealDetail;
 
 import retrofit2.Call;
 import retrofit2.Callback;

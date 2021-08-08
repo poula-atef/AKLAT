@@ -1,4 +1,4 @@
-package com.example.sharedprefrence;
+package com.example.sharedprefrence.UI;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
@@ -7,12 +7,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import com.example.sharedprefrence.classes.categories;
+import com.example.sharedprefrence.Adapters.pagerAdapter;
+import com.example.sharedprefrence.Classes.categories;
+import com.example.sharedprefrence.R;
 import com.google.android.material.tabs.TabLayout;
 
 import java.util.List;
 
-public class CategoryMeals extends AppCompatActivity {
+public class CategoryMealsActivity extends AppCompatActivity {
 
     ViewPager vp;
     TabLayout tab;
@@ -40,7 +42,7 @@ public class CategoryMeals extends AppCompatActivity {
     public void onComponentsClick(View view){
         int id = view.getId();
         if(id == R.id.back_btn){
-            Intent intent = new Intent(CategoryMeals.this, CategoriesActivity.class);
+            Intent intent = new Intent(CategoryMealsActivity.this, CategoriesActivity.class);
             startActivity(intent);
             finish();
 
@@ -49,7 +51,7 @@ public class CategoryMeals extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        Intent intent = new Intent(CategoryMeals.this, CategoriesActivity.class);
+        Intent intent = new Intent(CategoryMealsActivity.this, CategoriesActivity.class);
         startActivity(intent);
         finish();
     }

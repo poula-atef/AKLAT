@@ -1,4 +1,4 @@
-package com.example.sharedprefrence;
+package com.example.sharedprefrence.Adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -11,7 +11,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.example.sharedprefrence.classes.categories;
+import com.example.sharedprefrence.Classes.categories;
+import com.example.sharedprefrence.R;
 
 import java.util.List;
 
@@ -56,8 +57,8 @@ public class recAdapter extends RecyclerView.Adapter<recAdapter.categoryViewHold
 
 
 
-    interface onItemClickListener{
-        public void onItemClick(List<categories.CategoriesBean>categs,int index);
+    public interface onItemClickListener{
+        void onItemClick(List<categories.CategoriesBean>categs,int index);
     }
 
     public class categoryViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {

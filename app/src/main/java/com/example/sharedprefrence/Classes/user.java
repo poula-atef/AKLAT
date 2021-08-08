@@ -1,4 +1,4 @@
-package com.example.sharedprefrence;
+package com.example.sharedprefrence.Classes;
 
 public class user {
     private String email,username,password;

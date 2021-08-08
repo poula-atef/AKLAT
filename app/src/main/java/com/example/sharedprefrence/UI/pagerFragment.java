@@ -1,4 +1,4 @@
-package com.example.sharedprefrence;
+package com.example.sharedprefrence.UI;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -17,19 +17,25 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
 
-import com.example.sharedprefrence.classes.categories;
+import com.example.sharedprefrence.Adapters.mealAdapter;
+import com.example.sharedprefrence.Classes.catogeryMeals;
+import com.example.sharedprefrence.Classes.mealDetail;
+import com.example.sharedprefrence.R;
+import com.example.sharedprefrence.MVVM.myViewModel;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.example.sharedprefrence.Classes.categories;
+import com.example.sharedprefrence.Adapters.mealAdapter.onMealClickListener;
 
 import java.io.Serializable;
 import java.util.HashMap;
 import java.util.List;
 
 
-public class pagerFragment extends Fragment implements mealAdapter.onMealClickListener{
+public class pagerFragment extends Fragment implements onMealClickListener {
 
     RecyclerView mealsRec;
     mealAdapter mealAdapter;
@@ -77,7 +83,7 @@ public class pagerFragment extends Fragment implements mealAdapter.onMealClickLi
 
     @Override
     public void onMealClick(String id) {
-        Intent intent = new Intent(getContext(), MealDetails.class);
+        Intent intent = new Intent(getContext(), MealDetailsActivity.class);
         intent.putExtra("mealId",id);
         Bundle bundle = new Bundle();
         bundle.putSerializable("category",(Serializable)categs);
